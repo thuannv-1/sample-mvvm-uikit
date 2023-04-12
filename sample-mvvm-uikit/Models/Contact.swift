@@ -8,6 +8,7 @@
 import Foundation
 
 struct Contact {
-    let name: String
+    let familyName: String
+    let givenName: String
     let phoneNumber: String
 }

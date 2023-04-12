@@ -22,7 +22,7 @@ final class ContactTableViewCell: UITableViewCell {
     }
     
     func configCell(contact: Contact) {
-        nameLabel.text = contact.name
+        nameLabel.text = contact.familyName + " " + contact.givenName
         numberLabel.text = contact.phoneNumber
     }
 }

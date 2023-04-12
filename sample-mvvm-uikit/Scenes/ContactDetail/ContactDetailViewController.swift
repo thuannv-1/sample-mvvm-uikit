@@ -19,7 +19,7 @@ final class ContactDetailViewController: UIViewController {
     }
     
     private func configView() {
-        title = viewModel.contact?.name
+        title = viewModel.contact?.givenName
         phoneNumberLabel.text = viewModel.contact?.phoneNumber
     }
 }

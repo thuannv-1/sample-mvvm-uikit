@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E6609A129E65E71000BE337 /* ContactHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6609A029E65E71000BE337 /* ContactHeaderView.xib */; };
 		3EACF86829E5ACB700ADBB99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EACF86729E5ACB700ADBB99 /* AppDelegate.swift */; };
 		3EACF86A29E5ACB700ADBB99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EACF86929E5ACB700ADBB99 /* SceneDelegate.swift */; };
 		3EACF86F29E5ACB700ADBB99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EACF86D29E5ACB700ADBB99 /* Main.storyboard */; };
@@ -22,9 +23,12 @@
 		3EACF89229E5AF4400ADBB99 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EACF89029E5AF4400ADBB99 /* ContactTableViewCell.swift */; };
 		3EACF89329E5AF4400ADBB99 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EACF89129E5AF4400ADBB99 /* ContactTableViewCell.xib */; };
 		3EACF89829E5B00600ADBB99 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EACF89729E5B00600ADBB99 /* Contact.swift */; };
+		3EACF89B29E5BC3200ADBB99 /* PhoneContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EACF89A29E5BC3200ADBB99 /* PhoneContactsService.swift */; };
+		3EACF8A329E5CB4000ADBB99 /* ContactHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EACF8A229E5CB4000ADBB99 /* ContactHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E6609A029E65E71000BE337 /* ContactHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactHeaderView.xib; sourceTree = "<group>"; };
 		3EACF86429E5ACB700ADBB99 /* sample-mvvm-uikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sample-mvvm-uikit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EACF86729E5ACB700ADBB99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EACF86929E5ACB700ADBB99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		3EACF89029E5AF4400ADBB99 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		3EACF89129E5AF4400ADBB99 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		3EACF89729E5B00600ADBB99 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		3EACF89A29E5BC3200ADBB99 /* PhoneContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneContactsService.swift; sourceTree = "<group>"; };
+		3EACF8A229E5CB4000ADBB99 /* ContactHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 		3EACF86629E5ACB700ADBB99 /* sample-mvvm-uikit */ = {
 			isa = PBXGroup;
 			children = (
+				3EACF89929E5BC2000ADBB99 /* Domain */,
 				3EACF86729E5ACB700ADBB99 /* AppDelegate.swift */,
 				3EACF86929E5ACB700ADBB99 /* SceneDelegate.swift */,
 				3EACF89629E5AFA100ADBB99 /* Resources */,
@@ -98,6 +105,7 @@
 		3EACF87C29E5AD3500ADBB99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3EACF89D29E5CA8B00ADBB99 /* Views */,
 				3EACF88F29E5AF1E00ADBB99 /* Cells */,
 				3EACF87E29E5AD4C00ADBB99 /* HomeViewController.swift */,
 				3EACF88229E5AD7C00ADBB99 /* HomeViewModel.swift */,
@@ -158,6 +166,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		3EACF89929E5BC2000ADBB99 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3EACF89C29E5BCDA00ADBB99 /* Services */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3EACF89C29E5BCDA00ADBB99 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3EACF89A29E5BC3200ADBB99 /* PhoneContactsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3EACF89D29E5CA8B00ADBB99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3EACF8A229E5CB4000ADBB99 /* ContactHeaderView.swift */,
+				3E6609A029E65E71000BE337 /* ContactHeaderView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6609A129E65E71000BE337 /* ContactHeaderView.xib in Resources */,
 				3EACF87429E5ACB800ADBB99 /* LaunchScreen.storyboard in Resources */,
 				3EACF87129E5ACB800ADBB99 /* Assets.xcassets in Resources */,
 				3EACF88C29E5AE8500ADBB99 /* ContactDetailViewController.xib in Resources */,
@@ -237,9 +271,11 @@
 				3EACF88E29E5AEAA00ADBB99 /* ContactDetailViewModel.swift in Sources */,
 				3EACF88529E5AE2F00ADBB99 /* GroupViewModel.swift in Sources */,
 				3EACF88B29E5AE8500ADBB99 /* ContactDetailViewController.swift in Sources */,
+				3EACF89B29E5BC3200ADBB99 /* PhoneContactsService.swift in Sources */,
 				3EACF86A29E5ACB700ADBB99 /* SceneDelegate.swift in Sources */,
 				3EACF89229E5AF4400ADBB99 /* ContactTableViewCell.swift in Sources */,
 				3EACF88329E5AD7C00ADBB99 /* HomeViewModel.swift in Sources */,
+				3EACF8A329E5CB4000ADBB99 /* ContactHeaderView.swift in Sources */,
 				3EACF87F29E5AD4C00ADBB99 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,8 +423,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7X6CSKVAS2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "sample-mvvm-uikit/Info.plist";
+				INFOPLIST_KEY_NSContactsUsageDescription = "We Need";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -414,8 +452,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7X6CSKVAS2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "sample-mvvm-uikit/Info.plist";
+				INFOPLIST_KEY_NSContactsUsageDescription = "We Need";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

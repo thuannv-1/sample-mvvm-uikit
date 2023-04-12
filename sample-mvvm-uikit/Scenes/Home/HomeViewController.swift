@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ContactsUI
 
 final class HomeViewController: UIViewController {
     
@@ -13,7 +14,7 @@ final class HomeViewController: UIViewController {
     
     private let viewModel: HomeViewModel = .init()
     
-    private var dataSource = [Contact]() {
+    private var dataSource = [ContactSection]() {
         didSet {
             tableView.reloadData()
         }
@@ -32,6 +33,8 @@ final class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "ContactTableViewCell")
+        tableView.register(UINib(nibName: "ContactHeaderView", bundle: nil),
+                           forHeaderFooterViewReuseIdentifier: "ContactHeaderView")
     }
     
     private func loadContacts() {
@@ -51,21 +54,35 @@ final class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataSource.count
+    }
+    
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        dataSource.count
+        return dataSource[section].contacts.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell",
                                                  for: indexPath) as! ContactTableViewCell
-        cell.configCell(contact: dataSource[indexPath.row])
+        let contact = dataSource[indexPath.section].contacts[indexPath.row]
+        cell.configCell(contact: contact)
         return cell
     }
     
     func tableView(_ tableView: UITableView,
+                   viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ContactHeaderView") as! ContactHeaderView
+        let char = dataSource[section].char
+        view.configView(char: char)
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
-        toContactDetail(contact: dataSource[indexPath.row])
+        let contact = dataSource[indexPath.section].contacts[indexPath.row]
+        toContactDetail(contact: contact)
     }
 }
